@@ -9,12 +9,12 @@ for houses, apartments, and land.
 
 from typing import Optional
 
-from pydantic import BaseModel
+import pydantic
 
 from estate_project.domain.entities.address import Address
 
 
-class BaseRealEstate(BaseModel):
+class BaseRealEstate(pydantic.BaseModel):
     """A base class for real estate entities."""
 
     id: str

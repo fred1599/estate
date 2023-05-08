@@ -1,7 +1,11 @@
-from pydantic import BaseModel
+"""
+Entities for Address Models
+"""
+
+import pydantic
 
 
-class Address(BaseModel):
+class Address(pydantic.BaseModel):
     """
     A base real class for Address entities
     """

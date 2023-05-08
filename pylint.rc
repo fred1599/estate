@@ -1,7 +1,2 @@
 [MASTER]
-ignore-paths=estate_project/domain/entities/address.py,
-             estate_project/domain/entities/real_estate.py,
-             estate_project/main.py
-
-[TYPECHECKING]
-generated-members=pydantic.BaseModel
+extension-pkg-whitelist=pydantic

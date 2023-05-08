@@ -2,7 +2,7 @@
 Mortgage loan calculation and simulation
 """
 
-from typing import Dict
+from estate_project.domain.entities.mortgage import MortgageSimulationResult
 
 
 class MortgageLoan:
@@ -47,17 +47,52 @@ class MortgageLoan:
         """
         return round(self.calculate_monthly_payment() * self.loan_term * 12, 2)
 
-    def simulate_loan(self) -> Dict[str, float]:
+    def simulate_loan(self, currency="€") -> MortgageSimulationResult:
         """
         Simulate the mortgage loan by calculating the monthly payment and the total payment.
 
         Returns:
-            dict: A dictionary with the loan amount, interest rate, loan term, monthly payment, and total payment.
+            MortgageSimulationResult:
+            An object containing the loan amount,
+            interest rate, loan term, monthly payment, and total payment.
         """
-        return {
-            "loan_amount": self.loan_amount,
-            "interest_rate": self.interest_rate,
-            "loan_term": self.loan_term,
-            "monthly_payment": self.calculate_monthly_payment(),
-            "total_payment": self.calculate_total_payment(),
-        }
+        return MortgageSimulationResult(
+            loan_amount=str(self.loan_amount),
+            interest_rate=str(self.interest_rate),
+            loan_term=str(self.loan_term),
+            monthly_payment=str(self.calculate_monthly_payment()),
+            total_payment=str(self.calculate_total_payment()),
+            currency=currency,
+        )
+
+
+class SimulateMortgageLoan:
+    """
+    A use case for simulating a mortgage loan.
+    """
+
+    @staticmethod
+    def execute(
+        loan_amount: float, interest_rate: float, loan_term: int, currency: str = "€"
+    ) -> MortgageSimulationResult:
+        """
+        Execute the mortgage loan simulation use case.
+
+        Args:
+            loan_amount (float): The loan amount.
+            interest_rate (float): The annual interest rate in percentage.
+            loan_term (int): The loan term in years.
+
+        Returns:
+            MortgageSimulationResult:
+            An object containing the loan amount,
+            interest rate, loan term, monthly payment, and total payment.
+        """
+        if loan_amount <= 0:
+            raise ValueError("Loan amount must be greater than 0.")
+        if interest_rate <= 0:
+            raise ValueError("Interest rate must be greater than 0.")
+        if loan_term <= 0:
+            raise ValueError("Loan term must be greater than 0.")
+        mortgage = MortgageLoan(loan_amount, interest_rate, loan_term)
+        return mortgage.simulate_loan(currency=currency)

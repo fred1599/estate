@@ -19,37 +19,37 @@ class BaseRealEstate(pydantic.BaseModel):
 
     id: str
     title: Optional[str]
-    address: Address
+    address: Optional[Address]
     description: Optional[str]
     price: Optional[str]
-    currency: str
-    area: str
-    available: bool  # à vendre (True) ou à louer (False)
-    images: list[str]  # liste des images de la maison
+    currency: Optional[str]
+    area: Optional[str]
+    available: Optional[bool]  # à vendre (True) ou à louer (False)
+    images: Optional[list[str]]  # liste des images de la maison
 
 
 class BaseProperty(BaseRealEstate):
     """A base class for property entities."""
 
-    num_bedrooms: str
-    num_bathrooms: str
-    construction_year: str
+    num_bedrooms: Optional[str]
+    num_bathrooms: Optional[str]
+    construction_year: Optional[str]
 
 
 class House(BaseProperty):
     """A class representing a house entity."""
 
-    num_floors: str
-    has_garden: bool
-    has_garage: bool
+    num_floors: Optional[str]
+    has_garden: Optional[bool]
+    has_garage: Optional[bool]
 
 
 class Apartment(BaseProperty):
     """A class representing an apartment entity."""
 
-    num_floors: str
-    has_elevator: bool  # ascenseur
-    has_balcony: bool
+    num_floors: Optional[str]
+    has_elevator: Optional[bool]  # ascenseur
+    has_balcony: Optional[bool]
 
 
 class Land(BaseRealEstate):

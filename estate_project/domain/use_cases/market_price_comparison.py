@@ -4,8 +4,9 @@ Comparison of local real estate market prices
 
 from decimal import Decimal
 
-from estate_project.domain.entities.market_price_comparison import \
-    PropertyPriceComparisonResult
+from estate_project.domain.entities.market_price_comparison import (
+    PropertyPriceComparisonResult,
+)
 from estate_project.domain.entities.real_estate import BaseRealEstate
 
 
@@ -36,7 +37,8 @@ class MarketPriceComparison:
             target_property (BaseRealEstate): The target property for price comparison.
 
         Returns:
-            list[PropertyPriceComparisonResult]: A list of price comparison results for each property in the list.
+            list[PropertyPriceComparisonResult]:
+            A list of price comparison results for each property in the list.
         """
 
         results: list[PropertyPriceComparisonResult] = []

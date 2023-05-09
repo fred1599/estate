@@ -1,12 +1,12 @@
-from decimal import Decimal
-
 import pytest
 
-from estate_project.domain.entities.market_price_comparison import \
-    PropertyPriceComparisonResult
+from estate_project.domain.entities.market_price_comparison import (
+    PropertyPriceComparisonResult,
+)
 from estate_project.domain.entities.real_estate import BaseRealEstate
-from estate_project.domain.use_cases.market_price_comparison import \
-    MarketPriceComparison
+from estate_project.domain.use_cases.market_price_comparison import (
+    MarketPriceComparison,
+)
 
 
 @pytest.fixture
@@ -24,6 +24,7 @@ def properties() -> list[BaseRealEstate]:
             currency="€",
             area="120",
             available=True,
+            images=[],
         ),
         BaseRealEstate(
             id="2",
@@ -34,6 +35,7 @@ def properties() -> list[BaseRealEstate]:
             currency="€",
             area="100",
             available=True,
+            images=[],
         ),
     ]
 
@@ -52,6 +54,7 @@ def target_property() -> BaseRealEstate:
         currency="€",
         area="150",
         available=True,
+        images=[],
     )
 
 

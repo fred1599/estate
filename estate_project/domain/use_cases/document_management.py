@@ -28,6 +28,18 @@ class DocumentManagement:
         self._documents: list[Document] = []
         self._is_empty: bool = True
 
+    def __iter__(self):
+        """
+        Iterates over the documents in the document management system.
+
+        Parameters:
+        None
+
+        Yields:
+        - Document: The next document in the iteration.
+        """
+        yield from self._documents
+
     def add_document(self, document: Document) -> None:
         """
         Adds a document to the document management system.
@@ -77,3 +89,52 @@ class DocumentManagement:
                 return doc
 
         return None
+
+    def get_all_documents(self) -> list[Document]:
+        """
+        Retrieves all documents in the document management system.
+
+        Parameters:
+        None
+
+        Returns:
+        - list[Document]: List of all documents.
+        """
+        return self._documents
+
+    def get_document_count(self) -> int:
+        """
+        Returns the count of documents in the document management system.
+
+        Parameters:
+        None
+
+        Returns:
+        - int: The count of documents.
+        """
+        return len(self._documents)
+
+    def is_empty(self) -> bool:
+        """
+        Checks if the document management system is empty.
+
+        Parameters:
+        None
+
+        Returns:
+        - bool: True if the document management system is empty, False otherwise.
+        """
+        return self._is_empty
+
+    def clear_documents(self) -> None:
+        """
+        Clears all documents from the document management system.
+
+        Parameters:
+        None
+
+        Returns:
+        None
+        """
+        self._documents.clear()
+        self._is_empty = True

@@ -11,4 +11,4 @@ Voici les étapes à suivre pour vérifier la cohérence des versions des module
 3. Exécutez la commande suivante :
 
 ```shell
-pip check -r requirements.txt
+pip check -r requirements_prod.txt

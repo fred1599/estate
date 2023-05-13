@@ -1,45 +1,27 @@
-# Projet Immobilier
+# Cas d'utilisation
 
-Ce projet propose une solution complète pour la gestion des biens immobiliers. Il implémente plusieurs cas d'utilisation pour répondre aux besoins des agents immobiliers, des propriétaires et des locataires.
+Ce répertoire contient une série de scripts Python qui représentent chacun un cas d'utilisation spécifique de notre application immobilière.
 
-## Cas d'utilisation
+## Liste des cas d'utilisation
 
-### Recherche de biens immobiliers à vendre ou à louer (Search for properties for sale or rent)
+Voici une explication de chaque cas d'utilisation :
 
-Permet aux utilisateurs de rechercher des biens immobiliers disponibles à la vente ou à la location. Les utilisateurs peuvent filtrer les résultats en fonction de divers critères tels que le type de bien, la superficie, le nombre de chambres, le prix, etc.
+- `construction_project_tracking.py` : Gère et suit l'avancement des projets de construction. Il peut inclure des fonctionnalités comme la planification des tâches, le suivi des coûts et l'enregistrement des progrès.
 
-### Calcul du prêt hypothécaire et simulation (Mortgage loan calculation and simulation)
+- `document_management.py` : Gère tous les documents liés à l'immobilier. Il peut inclure des fonctionnalités pour stocker, récupérer, partager et archiver des documents tels que des contrats de location, des titres de propriété et des permis de construire.
 
-Aide les utilisateurs à calculer le montant du prêt hypothécaire qu'ils peuvent emprunter ainsi qu'à simuler les remboursements mensuels en fonction des taux d'intérêt et de la durée du prêt.
+- `maintenance_reporting.py` : Utilisé pour signaler et suivre les problèmes de maintenance. Il peut permettre aux utilisateurs de soumettre des rapports de problèmes et de suivre l'état des demandes de réparation.
 
-### Estimation de la valeur d'un bien immobilier (Estimation of a property's value)
+- `manage_listings.py` : Fournit des outils pour gérer les annonces immobilières. Il pourrait permettre aux utilisateurs de créer, de modifier et de supprimer des annonces, et de répondre aux demandes de renseignements des clients potentiels.
 
-Fournit une estimation de la valeur d'un bien immobilier en fonction de divers facteurs tels que l'emplacement, la superficie, l'âge du bien, les équipements, etc.
+- `market_price_comparison.py` : Permet aux utilisateurs de comparer les prix de l'immobilier sur le marché. Il pourrait inclure des fonctionnalités pour analyser les tendances des prix, comparer les prix des propriétés similaires et générer des rapports.
 
-### Prise de rendez-vous pour visiter un bien (Scheduling appointments for property visits)
+- `mortgage_calculation.py` : Fournit un outil pour calculer les paiements hypothécaires. Il pourrait permettre aux utilisateurs de saisir les détails de l'hypothèque et de recevoir une estimation des paiements mensuels.
 
-Permet aux utilisateurs de prendre rendez-vous pour visiter un bien immobilier. Les agents immobiliers et les propriétaires peuvent gérer les visites et les disponibilités.
+- `property_valuation.py` : Fournit un outil pour estimer la valeur d'une propriété. Il pourrait utiliser divers facteurs tels que l'emplacement, la taille, l'âge et l'état de la propriété pour générer une estimation de la valeur.
 
-### Gestion des annonces immobilières pour les agents (Management of property listings for agents)
+- `schedule_visit.py` : Permet aux utilisateurs de planifier des visites de propriétés. Il pourrait permettre aux utilisateurs de choisir une date et une heure pour une visite, et d'envoyer une demande au propriétaire ou à l'agent immobilier.
 
-Facilite la gestion des annonces immobilières pour les agents, y compris la création, la modification et la suppression des annonces.
+- `search_properties.py` : Permet aux utilisateurs de rechercher des propriétés. Il pourrait inclure des fonctionnalités pour filtrer les propriétés par emplacement, prix, taille, type et autres critères.
 
-### Gestion des dossiers locataires pour les propriétaires (Tenant file management for property owners)
-
-Aide les propriétaires à gérer les dossiers locataires, y compris les informations sur les locataires, les contrats de location et les historiques de paiement.
-
-### Signalement et suivi des problèmes de maintenance (Reporting and tracking of maintenance issues)
-
-Permet aux locataires de signaler les problèmes de maintenance et aux propriétaires de les suivre et de les résoudre.
-
-### Comparaison des prix du marché immobilier local (Comparison of local real estate market prices)
-
-Fournit une comparaison des prix du marché immobilier local pour aider les utilisateurs à prendre des décisions éclairées lors de l'achat, de la vente ou de la location de biens immobiliers.
-
-### Gestion des documents et contrats immobiliers (Management of real estate documents and contracts)
-
-Facilite la gestion des documents et contrats immobiliers, tels que les contrats de vente, les contrats de location et les documents légaux.
-
-### Suivi des projets immobiliers en construction (Tracking of real estate projects under construction)
-
-Permet aux promoteurs immobiliers et aux investisseurs de suivre l'avancement des projets immobiliers en construction, y compris les coûts, les délais et les mises à jour du projet.
+- `tenant_management.py` : Gère les relations avec les locataires. Il pourrait inclure des fonctionnalités pour suivre les paiements de loyer, gérer les contrats de location et communiquer avec les locataires.

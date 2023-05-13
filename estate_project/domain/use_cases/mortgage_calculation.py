@@ -22,7 +22,7 @@ class MortgageLoan:
         self.interest_rate: float = interest_rate
         self.loan_term: int = loan_term
 
-    def calculate_monthly_payment(self) -> float:
+    def _calculate_monthly_payment(self) -> float:
         """
         Calculate the monthly payment for the mortgage loan.
 
@@ -38,14 +38,14 @@ class MortgageLoan:
         )
         return round(monthly_payment, 2)
 
-    def calculate_total_payment(self) -> float:
+    def _calculate_total_payment(self) -> float:
         """
         Calculate the total payment for the mortgage loan.
 
         Returns:
             float: The total payment.
         """
-        return round(self.calculate_monthly_payment() * self.loan_term * 12, 2)
+        return round(self._calculate_monthly_payment() * self.loan_term * 12, 2)
 
     def simulate_loan(self, currency="€") -> MortgageSimulationResult:
         """
@@ -60,8 +60,8 @@ class MortgageLoan:
             loan_amount=str(self.loan_amount),
             interest_rate=str(self.interest_rate),
             loan_term=str(self.loan_term),
-            monthly_payment=str(self.calculate_monthly_payment()),
-            total_payment=str(self.calculate_total_payment()),
+            monthly_payment=str(self._calculate_monthly_payment()),
+            total_payment=str(self._calculate_total_payment()),
             currency=currency,
         )
 

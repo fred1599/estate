@@ -1,15 +1,17 @@
 """
-Mortgage loan calculation and simulation
+Mortgage loan calculation and simulation.
 """
 
 from estate_project.domain.entities.mortgage import MortgageSimulationResult
 
 
+# trunk-ignore(pylint/R0903)
 class MortgageLoan:
     """
     A class to represent a mortgage loan.
 
-    Attributes:
+    Attributes
+    ----------
         loan_amount (float): The loan amount.
         interest_rate (float): The annual interest rate in percentage.
         loan_term (int): The loan term in years.
@@ -26,7 +28,8 @@ class MortgageLoan:
         """
         Calculate the monthly payment for the mortgage loan.
 
-        Returns:
+        Returns
+        -------
             float: The monthly payment.
         """
         monthly_interest_rate: float = self.interest_rate / 12 / 100
@@ -42,7 +45,8 @@ class MortgageLoan:
         """
         Calculate the total payment for the mortgage loan.
 
-        Returns:
+        Returns
+        -------
             float: The total payment.
         """
         return round(self._calculate_monthly_payment() * self.loan_term * 12, 2)
@@ -51,7 +55,8 @@ class MortgageLoan:
         """
         Simulate the mortgage loan by calculating the monthly payment and the total payment.
 
-        Returns:
+        Returns
+        -------
             MortgageSimulationResult:
             An object containing the loan amount,
             interest rate, loan term, monthly payment, and total payment.
@@ -66,12 +71,14 @@ class MortgageLoan:
         )
 
 
+# trunk-ignore(pylint/R0903)
 class SimulateMortgageLoan:
     """
     A use case for simulating a mortgage loan.
     """
 
     @staticmethod
+    # trunk-ignore(ruff/D417)
     def execute(
         loan_amount: float, interest_rate: float, loan_term: int, currency: str = "€"
     ) -> MortgageSimulationResult:
@@ -79,11 +86,14 @@ class SimulateMortgageLoan:
         Execute the mortgage loan simulation use case.
 
         Args:
+        ----
             loan_amount (float): The loan amount.
             interest_rate (float): The annual interest rate in percentage.
             loan_term (int): The loan term in years.
+            currency (str): The currency.
 
         Returns:
+        -------
             MortgageSimulationResult:
             An object containing the loan amount,
             interest rate, loan term, monthly payment, and total payment.

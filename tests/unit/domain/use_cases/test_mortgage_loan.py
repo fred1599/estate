@@ -3,8 +3,7 @@ from decimal import Decimal
 import pytest
 
 from estate_project.domain.entities.mortgage import MortgageSimulationResult
-from estate_project.domain.use_cases.mortgage_calculation import \
-    SimulateMortgageLoan
+from estate_project.domain.use_cases.mortgage_calculation import SimulateMortgageLoan
 
 
 @pytest.fixture

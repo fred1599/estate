@@ -1,4 +1,4 @@
--r requirements.txt
+-r requirements_prod.txt
 
 pytest==7.3.1
 pre-commit==3.3.1
